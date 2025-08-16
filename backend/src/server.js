@@ -8,12 +8,16 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 5001;
 
-app.use("/api/notes", notesRoutes)
-
 connectDB()
 
-app.listen(5001, () => {
-    console.log("Server listening at http://localhost:5001")
+// middleware to parse JSON bodies
+
+app.use(express.json())
+
+app.use("/api/notes", notesRoutes)
+
+app.listen(PORT, () => {
+    console.log(`Server listening at http://localhost:${PORT}`)
 })
 
 

@@ -1,0 +1,12 @@
+# Ignore node_modules
+node_modules/
+
+# Optional: Ignore logs
+npm-debug.log
+yarn-error.log
+
+# Optional: Ignore environment variables
+.env
+
+# Optional: macOS system files
+.DS_Store

@@ -72,14 +72,15 @@ const NoteDetailPage = () => {
 
     return (
         <div className="min-h-screen bg-base-200">
-            <div className="container mx-auto px-4 py-8">
+            <div className="max-w-6xl mx-auto py-6 p-2">
                 <div className="mx-w-2xl mx-auto">
                     <div className="flex items-center justify-between mb-6">
-                        <Link to="/" className="btn btn-ghost">
+                        <button className="rounded-full btn btn-primary">
                             <ArrowLeftIcon className="h-5 w-5" />
                             Back to Notes
-                        </Link>
-                        <button onClick={handleDelete} className="btn btn-error btn-outline">
+                            <Link to={'/'} />
+                        </button>
+                        <button onClick={handleDelete} className="btn btn-secondary rounded-full">
                             <Trash2Icon className="h-5 w-5" />
                             Delete Note
                         </button>
@@ -108,14 +109,14 @@ const NoteDetailPage = () => {
                             <input
                                 type="text"
                                 placeholder="Write your note here..."
-                                className="textarea textarea-bordered h-32"
+                                className="textarea textarea-bordered"
                                 value={note.content}
                                 onChange={(e) => setNote({ ...note, content: e.target.value })}
                             />
                         </div>
 
                         <div className="card-actions justify-end">
-                            <button type="submit" onClick={handleSave} className="btn btn-primary" disabled={saving}>
+                            <button type="submit" onClick={handleSave} className="btn btn-accent rounded-full" disabled={saving}>
                                 {saving ? "Saving..." : "Save changes"}
                             </button>
                         </div>

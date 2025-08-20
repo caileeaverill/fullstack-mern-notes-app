@@ -1,19 +1,23 @@
 import { Link } from 'react-router'
 import { PlusIcon } from 'lucide-react'
 
+import SearchBar from './SearchBar'
+
 const Navbar = () => {
     return (
-        <header className='bg-base-300 border-b border-base-content/10'>
-            <div className='mx-auto max-w-6xl p-4'>
-                <div className='flex items-center justify-between'>
-                    <h1 className='text-3xl font-bold text-primary font-mono tracking-tighter'>My Notes</h1>
-                    <div className='flex items-center gap-4'>
-                        <Link to={"/create"} className='btn btn-primary'>  <PlusIcon className='size-5' />Create Note</Link>
-                    </div>
+        <div className='bg-primary'>
+            <div className="navbar shadow-sm max-w-6xl mx-auto">
+                <div className="flex-1">
+                    <Link to={'/'} className="text-black font-bold text-2xl">My Notebook</Link>
                 </div>
-
+                <div className="flex gap-4">
+                    <SearchBar />
+                    <Link to={"/create"} className='btn btn-secondary rounded-full'>
+                        <PlusIcon className='size-5' />Create Note
+                    </Link>
+                </div>
             </div>
-        </header>
+        </div>
     )
 }
 
